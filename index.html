@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Aura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="aura" id="aura">
+      <header>
+        <div class="brand"><span class="brand-mark">✦</span> focus aura</div>
+        <button class="icon-button" id="themeButton" aria-label="Temayı değiştir">☼</button>
+      </header>
+
+      <section class="welcome">
+        <p class="eyebrow" id="dateLabel"></p>
+        <h1>Bugün, <em>alan aç.</em></h1>
+        <p class="subtle">Küçük bir niyet, sakin bir ekran, daha derin odak.</p>
+      </section>
+
+      <section class="intention-card glass">
+        <div class="card-label"><span>✦</span> Bugünün niyeti</div>
+        <div class="intention-row">
+          <input id="intention" maxlength="100" value="Tek bir işi gerçekten bitirmek." aria-label="Bugünün niyeti" />
+          <button id="refreshSuggestion" class="round-button" aria-label="Yeni öneri getir">↻</button>
+        </div>
+        <p class="suggestion" id="suggestion">Bugün önce en sessiz görevi seç. Başlamak, motivasyonu çağırır.</p>
+        <div class="coach-row">
+          <input id="context" maxlength="180" placeholder="Şu an seni ne zorluyor?" aria-label="Odak bağlamı" />
+          <button id="coachButton" class="coach-button">AI koça sor <span>↗</span></button>
+        </div>
+      </section>
+
+      <section class="timer-card glass">
+        <div class="timer-top">
+          <div>
+            <p class="card-label">DERİN ODAK</p>
+            <p class="session-note" id="sessionNote">Hazırsan 25 dakika senin.</p>
+          </div>
+          <span class="live-dot"></span>
+        </div>
+        <div class="time" id="time">25:00</div>
+        <div class="progress"><span id="progress"></span></div>
+        <div class="timer-actions">
+          <button class="ghost" id="resetButton">Sıfırla</button>
+          <button class="primary" id="startButton">Başla <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="quote-card glass">
+          <p class="card-label">BUGÜNÜN İPUCU</p>
+          <p id="tip">“Mükemmel bir plan değil, görünür bir sonraki adım yeter.”</p>
+        </article>
+        <article class="mood-card glass">
+          <p class="card-label">ENERJİN NASIL?</p>
+          <div class="moods" role="group" aria-label="Enerji seviyesi">
+            <button data-mood="Yavaş">◔<small>Yavaş</small></button>
+            <button class="selected" data-mood="Dengeli">◒<small>Dengeli</small></button>
+            <button data-mood="Yüksek">◕<small>Yüksek</small></button>
+          </div>
+        </article>
+      </section>
+
+      <footer><span id="moodMessage">Dengeli bir tempo seçildi.</span><span>⌘ Kısayol: boşluk</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
+
